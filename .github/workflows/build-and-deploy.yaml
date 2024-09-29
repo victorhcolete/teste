@@ -30,7 +30,7 @@ jobs:
       env:
         GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
       run: |
-        gcloud container clusters get-credentials cluster-1-kubernetes --rigion us-central1-c --project ${{ secrets.GCP_PROJECT_ID }}
+        gcloud container clusters get-credentials cluster-1-kubernetes --region us-central1-c --project ${{ secrets.GCP_PROJECT_ID }}
         sed -i "s|<IMAGE>|us-central1-docker.pkg.dev/smart-envoy-428321-e5/docker-repo/conversor-peso:${{ github.sha }}|g" resources.yaml
         kubectl apply -f resources.yaml
         
