@@ -28,9 +28,9 @@ jobs:
    
     - name: deploy to Kubernetes
       env:
-        GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+        GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
       run: |
-        gcloud container clusters get-credentials cluster-1-kubernetes --region us-central1-c --project ${{ secrets.GCP_PROJECT_ID }}
-        sed -i "s/GCP_PROJECT_ID/${{ secrets.GCP_PROJECT_ID }}/g" resources.yaml
+        gcloud container clusters get-credentials cluster-1-kubernetes --region us-central1-c --project ${{ secrets.GOOGLE_PROJECT }}
+        sed -i "s/GOOGLE_PROJECT/${{ secrets.GOOGLE_PROJECT }}/g" resources.yaml
         kubectl apply -f resources.yaml
         
