@@ -17,7 +17,7 @@ spec:
     spec: 
       containers:
       - name: conversor
-        image: us-central1-docker.pkg.dev/smart-envoy-428321-e5/docker-repo/conversor-peso:latest
+        image: us-central1-docker.pkg.dev/smart-envoy-428321-e5/docker-repo/conversor-peso:${{ github.sha }}
         resources:
           limits:
             memory: "256Mi"
