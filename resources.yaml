@@ -17,7 +17,7 @@ spec:
     spec: 
       containers:
       - name: conversor
-        image: us-central1-docker.pkg.dev/neon-rex-437900-a4/image-repo/conversor-peso:IMAGE_TAG
+        image: us-central1-docker.pkg.dev/GCP_PROJECT_ID/image-repo/conversor-peso:IMAGE_TAG
         resources:
           limits:
             memory: "256Mi"
